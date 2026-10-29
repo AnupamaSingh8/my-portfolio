@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anupama Singh | B.Tech CS & AI Student & Developer</title>
+  <meta name="description" content="Portfolio of Anupama Singh - B.Tech CS & AI student at Newton School of Technology (RU Campus), passionate about Python, Artificial Intelligence, Badminton, and technology innovation." />
+  <meta name="author" content="Anupama Singh" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Ambient Background Canvas / Glow Elements -->
+  <canvas id="ambient-canvas"></canvas>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-accent">&lt;</span>Anupama<span class="logo-accent">/&gt;</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a>
+        <a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a>
+        <a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Journey</a>
+        <a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Projects</a>
+        <a href="#interests" class="nav-link"><i class="fa-solid fa-heart"></i> Interests</a>
+        <a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+      </nav>
+
+      <!-- Action Buttons (Theme Toggle & Mobile Menu) -->
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light theme" title="Toggle Theme">
+          <i class="fa-solid fa-sun" id="theme-icon"></i>
+        </button>
+        <a href="#contact" class="btn btn-sm btn-primary nav-cta">Let's Connect</a>
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-logo">&lt;Anupama/&gt;</span>
+      <button id="drawer-close" class="icon-btn" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <nav class="drawer-links">
+      <a href="#hero" class="drawer-link"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="#about" class="drawer-link"><i class="fa-solid fa-user"></i> About</a>
+      <a href="#skills" class="drawer-link"><i class="fa-solid fa-code"></i> Skills</a>
+      <a href="#education" class="drawer-link"><i class="fa-solid fa-graduation-cap"></i> Journey</a>
+      <a href="#projects" class="drawer-link"><i class="fa-solid fa-laptop-code"></i> Projects</a>
+      <a href="#interests" class="drawer-link"><i class="fa-solid fa-heart"></i> Interests</a>
+      <a href="#contact" class="drawer-link"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+    </nav>
+    <div class="drawer-footer">
+      <a href="#contact" class="btn btn-primary w-full">Say Hello 👋</a>
+    </div>
+  </aside>
+
+  <!-- Main Content Wrapper -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span>Available for Collaborations & Tech Projects</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Anupama Singh</span>
+          </h1>
+
+          <h2 class="hero-subtitle">
+            I am a <span class="typing-text" id="typing-text"></span><span class="typing-cursor">|</span>
+          </h2>
+
+          <p class="hero-description">
+            An 18-year-old tech enthusiast from <strong>Uttar Pradesh, India</strong>, pursuing my 
+            <strong>B.Tech in Computer Science & Artificial Intelligence</strong> at 
+            <strong>Newton School of Technology (RU Campus)</strong>. Passionate about writing clean Python code, 
+            exploring machine intelligence, and solving real-world challenges.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-diagram-project"></i> View My Work
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fa-regular fa-envelope"></i> Get In Touch
+            </a>
+          </div>
+
+          <div class="hero-socials">
+            <span class="socials-label">Connect with me:</span>
+            <div class="social-links">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="mailto:anupama@example.com" class="social-link" title="Email Me">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="avatar-card">
+            <div class="avatar-glow"></div>
+            <div class="avatar-frame">
+              <div class="avatar-inner">
+                <!-- Aesthetic Avatar Placeholder with Initials & Badge -->
+                <div class="avatar-graphic">
+                  <div class="avatar-circle">
+                    <span class="avatar-initials">AS</span>
+                  </div>
+                  <div class="avatar-badge">
+                    <i class="fa-solid fa-code"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Quick Badges -->
+            <div class="floating-badge badge-top-right">
+              <i class="fa-brands fa-python python-icon"></i>
+              <div>
+                <span class="badge-title">Python</span>
+                <span class="badge-sub">Actively Learning</span>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom-left">
+              <i class="fa-solid fa-brain ai-icon"></i>
+              <div>
+                <span class="badge-title">CS & AI</span>
+                <span class="badge-sub">NST – RU Campus</span>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom-right">
+              <i class="fa-solid fa-feather-pointed sport-icon"></i>
+              <div>
+                <span class="badge-title">Badminton</span>
+                <span class="badge-sub">& Basketball Player</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+        <span>Scroll Down</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-regular fa-id-card"></i> Know Me Better</span>
+          <h2 class="section-title">About <span class="gradient-text">Myself</span></h2>
+          <p class="section-subtitle">A glimpse into my background, personality, and what drives my curiosity.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card intro-card">
+            <div class="intro-header">
+              <span class="pill-badge"><i class="fa-solid fa-location-dot"></i> Uttar Pradesh, India</span>
+              <span class="pill-badge pill-purple"><i class="fa-solid fa-calendar-day"></i> 18 Years Old</span>
+              <span class="pill-badge pill-green"><i class="fa-solid fa-user-gear"></i> Ambivert Personality</span>
+            </div>
+            <h3 class="about-heading">Curious Mind, Creative Spirit & Aspiring Technologist</h3>
+            <p>
+              Hello! I'm <strong>Anupama Singh</strong>. I completed my foundational schooling at <strong>Woodland Academy</strong> and am currently pursuing my <strong>B.Tech in Computer Science & Artificial Intelligence</strong> at <strong>Newton School of Technology (Rishihood University Campus)</strong>.
+            </p>
+            <p>
+              As an <strong>ambivert</strong>, I find joy in both worlds: diving deep into hours of focused logic, debugging, and problem-solving, as well as brainstorming, exchanging ideas, and collaborating warmly in team settings.
+            </p>
+            <p>
+              I believe learning is a continuous adventure. Whenever I am not experimenting with Python scripts or discovering algorithms, you will find me smashing shuttles on the <strong>Badminton</strong> court or shooting hoops while learning <strong>Basketball</strong>!
+            </p>
+
+            <div class="stats-row">
+              <div class="stat-item">
+                <span class="stat-number">B.Tech</span>
+                <span class="stat-label">CS & AI @ NST-RU</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Enthusiasm to Learn</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">2+</span>
+                <span class="stat-label">Active Sports Loved</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon icon-blue">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <h4>Artificial Intelligence</h4>
+              <p>Fascinated by how algorithms learn patterns, process language, and automate intelligent decision making.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon icon-yellow">
+                <i class="fa-brands fa-python"></i>
+              </div>
+              <h4>Python Programming</h4>
+              <p>Building strong foundations in Python syntax, data structures, and computational problem solving daily.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon icon-pink">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+              <h4>Sports & Discipline</h4>
+              <p>Badminton enthusiast and basketball learner — building strategic thinking, agility, and teamwork on and off court.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon icon-green">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <h4>Lifelong Growth</h4>
+              <p>Constantly seeking new knowledge, embracing challenges, and pushing creative boundaries in technology.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-code"></i> Technical Arsenal</span>
+          <h2 class="section-title">My Skills & <span class="gradient-text">Learning Path</span></h2>
+          <p class="section-subtitle">Technologies, tools, and competencies I am actively sharpening.</p>
+        </div>
+
+        <div class="skills-categories-grid">
+          <!-- Category 1: Languages & AI -->
+          <div class="skills-category-card">
+            <div class="category-title-wrap">
+              <div class="category-icon icon-python">
+                <i class="fa-brands fa-python"></i>
+              </div>
+              <div>
+                <h3>Programming & AI</h3>
+                <span>Core languages & computational logic</span>
+              </div>
+            </div>
+            
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-brands fa-python"></i> Python</span>
+                  <span class="skill-percent">Currently Mastering</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill fill-python" style="width: 75%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-solid fa-brain"></i> AI & Machine Learning Concepts</span>
+                  <span class="skill-percent">Learning</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill fill-ai" style="width: 65%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-solid fa-cubes"></i> Data Structures & Algorithms</span>
+                  <span class="skill-percent">In Progress</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill fill-algo" style="width: 60%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Web & Modern Tools -->
+          <div class="skills-category-card">
+            <div class="category-title-wrap">
+              <div class="category-icon icon-web">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <div>
+                <h3>Web & Development Tools</h3>
+                <span>Frontend foundations & toolsets</span>
+              </div>
+            </div>
+
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-brands fa-html5"></i> HTML5 & CSS3</span>
+                  <span class="skill-percent">Proficient</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill fill-html" style="width: 85%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-brands fa-js"></i> JavaScript Basics</span>
+                  <span class="skill-percent">Active Learning</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill fill-js" style="width: 65%;"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-brands fa-git-alt"></i> Git & GitHub / VS Code</span>
+                  <span class="skill-percent">Intermediate</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill fill-git" style="width: 70%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Soft Skills & Mindset -->
+          <div class="skills-category-card">
+            <div class="category-title-wrap">
+              <div class="category-icon icon-soft">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <div>
+                <h3>Strengths & Mindset</h3>
+                <span>Personal qualities & collaborative skills</span>
+              </div>
+            </div>
+
+            <div class="pill-cloud">
+              <span class="tech-pill"><i class="fa-solid fa-magnifying-glass"></i> Problem Solving</span>
+              <span class="tech-pill"><i class="fa-solid fa-users"></i> Ambivert Adaptability</span>
+              <span class="tech-pill"><i class="fa-solid fa-bolt"></i> Fast Learner</span>
+              <span class="tech-pill"><i class="fa-solid fa-comments"></i> Clear Communication</span>
+              <span class="tech-pill"><i class="fa-solid fa-puzzle-piece"></i> Critical Thinking</span>
+              <span class="tech-pill"><i class="fa-solid fa-handshake"></i> Team Collaboration</span>
+              <span class="tech-pill"><i class="fa-solid fa-fire"></i> Discipline (Sports Driven)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & JOURNEY SECTION -->
+    <section class="education section" id="education">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Milestones</span>
+          <h2 class="section-title">My Academic <span class="gradient-text">Journey</span></h2>
+          <p class="section-subtitle">The educational roots shaping my knowledge and future in technology.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-date">2024 – Present (Ongoing)</div>
+              <h3 class="timeline-degree">B.Tech in Computer Science & Artificial Intelligence</h3>
+              <h4 class="timeline-institution">
+                <i class="fa-solid fa-building-columns"></i> Newton School of Technology – Rishihood University (RU Campus)
+              </h4>
+              <p class="timeline-text">
+                Immersed in cutting-edge computer science engineering curriculum focused on Artificial Intelligence, hands-on programming with Python, algorithms, software engineering principles, and real-world project development.
+              </p>
+              <div class="timeline-tags">
+                <span class="timeline-tag">CS & AI</span>
+                <span class="timeline-tag">Python</span>
+                <span class="timeline-tag">Data Structures</span>
+                <span class="timeline-tag">Machine Learning</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-school"></i>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-date">Completed Schooling</div>
+              <h3 class="timeline-degree">High School & Intermediate Education</h3>
+              <h4 class="timeline-institution">
+                <i class="fa-solid fa-school-flag"></i> Woodland Academy
+              </h4>
+              <p class="timeline-text">
+                Built a solid foundation in sciences and mathematics. Actively participated in school activities, sports competitions (Badminton), and developed a passionate interest in technology and computers.
+              </p>
+              <div class="timeline-tags">
+                <span class="timeline-tag">Science & Mathematics</span>
+                <span class="timeline-tag">Sports & Badminton</span>
+                <span class="timeline-tag">Woodland Academy Alum</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-laptop-code"></i> Portfolio Work</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+          <p class="section-subtitle">Practical applications of code, algorithms, and interactive web tools.</p>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="filter-controls">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="python">Python & AI</button>
+          <button class="filter-btn" data-filter="web">Web Development</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Python AI Assistant / Analyzer -->
+          <div class="project-card" data-category="python">
+            <div class="project-preview preview-python">
+              <div class="project-overlay">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="overlay-btn" title="View Code">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+              <div class="preview-badge">Python / AI</div>
+              <div class="preview-icon">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Intelligent Python Data & Text Analyzer</h3>
+              <p class="project-description">
+                A Python-based utility that processes text datasets, performs frequency sentiment analysis, and generates structured summaries using fundamental NLP heuristics.
+              </p>
+              <div class="project-tags">
+                <span>Python 3</span>
+                <span>Data Analysis</span>
+                <span>Algorithms</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+                <span class="project-status"><i class="fa-solid fa-circle-check"></i> Featured</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Sports & Game Tracker -->
+          <div class="project-card" data-category="python">
+            <div class="project-preview preview-sports">
+              <div class="project-overlay">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="overlay-btn" title="View Code">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+              <div class="preview-badge">Python App</div>
+              <div class="preview-icon">
+                <i class="fa-solid fa-baseball-bat-ball"></i>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">CourtScore: Badminton Match & Set Tracker</h3>
+              <p class="project-description">
+                An interactive match scoring and performance analysis tool designed with Python OOP concepts to record rally statistics, player stamina metrics, and match outcomes.
+              </p>
+              <div class="project-tags">
+                <span>Python OOP</span>
+                <span>Statistics</span>
+                <span>Badminton Logic</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+                <span class="project-status"><i class="fa-solid fa-circle-check"></i> Interactive</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Responsive Developer Portfolio -->
+          <div class="project-card" data-category="web">
+            <div class="project-preview preview-web">
+              <div class="project-overlay">
+                <a href="#hero" class="overlay-btn" title="Live Preview">
+                  <i class="fa-solid fa-eye"></i>
+                </a>
+              </div>
+              <div class="preview-badge">Web Dev</div>
+              <div class="preview-icon">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Modern Interactive Portfolio Website</h3>
+              <p class="project-description">
+                A custom-built, responsive portfolio showcasing personal milestones, interactive skill visuals, dynamic dark/light themes, and contact channels.
+              </p>
+              <div class="project-tags">
+                <span>HTML5</span>
+                <span>CSS3 Glassmorphism</span>
+                <span>JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="#hero" class="project-link">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Current Site
+                </a>
+                <span class="project-status"><i class="fa-solid fa-circle-check"></i> Live</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERESTS & PASSIONS SECTION -->
+    <section class="interests section" id="interests">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-heart-pulse"></i> Beyond The Code</span>
+          <h2 class="section-title">Interests & <span class="gradient-text">Passions</span></h2>
+          <p class="section-subtitle">What keeps me energized, motivated, and balanced outside the classroom.</p>
+        </div>
+
+        <div class="interests-grid">
+          <div class="interest-card">
+            <div class="interest-icon-box sport-badminton">
+              <i class="fa-solid fa-feather-pointed"></i>
+            </div>
+            <h3>Badminton</h3>
+            <p>
+              My favorite sport! I love the quick reflexes, strategic smashes, and high energy required on the court. It sharpens focus, stamina, and agility.
+            </p>
+            <span class="interest-pill"><i class="fa-solid fa-medal"></i> Passionate Player</span>
+          </div>
+
+          <div class="interest-card">
+            <div class="interest-icon-box sport-basketball">
+              <i class="fa-solid fa-basketball"></i>
+            </div>
+            <h3>Basketball</h3>
+            <p>
+              Currently learning basketball fundamentals, dribbling drills, and shooting techniques. A great team sport that fosters swift communication and court awareness.
+            </p>
+            <span class="interest-pill"><i class="fa-solid fa-spinner fa-spin-pulse"></i> Currently Learning</span>
+          </div>
+
+          <div class="interest-card">
+            <div class="interest-icon-box tech-explore">
+              <i class="fa-solid fa-compass"></i>
+            </div>
+            <h3>Exploring New Things</h3>
+            <p>
+              A constant desire to explore emerging tech trends, learn new frameworks, read insightful articles, and discover creative hobbies that broaden perspectives.
+            </p>
+            <span class="interest-pill"><i class="fa-solid fa-infinity"></i> Continuous Growth</span>
+          </div>
+
+          <div class="interest-card">
+            <div class="interest-icon-box personality-box">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <h3>Ambivert Mindset</h3>
+            <p>
+              The balance of introspective, focused solo coding sessions paired with lively, empathetic team discussions and collaborative problem solving.
+            </p>
+            <span class="interest-pill"><i class="fa-solid fa-yin-yang"></i> Balanced Vibe</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-paper-plane"></i> Get In Touch</span>
+          <h2 class="section-title">Let's Connect & <span class="gradient-text">Collaborate</span></h2>
+          <p class="section-subtitle">Have a project idea, want to collaborate on Python/AI, or just talk sports? Drop a message!</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Column -->
+          <div class="contact-info-card">
+            <h3>Contact Information</h3>
+            <p>Feel free to reach out through any of these channels. I'd love to hear from you!</p>
+
+            <div class="contact-methods">
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <div>
+                  <span class="method-title">Name</span>
+                  <span class="method-val">Anupama Singh</span>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <span class="method-title">Location</span>
+                  <span class="method-val">Uttar Pradesh, India</span>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                  <span class="method-title">Campus</span>
+                  <span class="method-val">Newton School of Technology (RU Campus)</span>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="method-title">Email</span>
+                  <a href="mailto:anupamasingh@example.com" class="method-val link-val">anupamasingh@example.com</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-socials-wrap">
+              <h4>Social Profiles</h4>
+              <div class="social-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:anupamasingh@example.com" class="social-link" title="Email">
+                  <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form Column -->
+          <div class="contact-form-card">
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name <span class="required">*</span></label>
+                  <div class="input-wrap">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="name" name="name" placeholder="e.g. John Doe" required />
+                  </div>
+                  <span class="error-msg" id="name-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Your Email <span class="required">*</span></label>
+                  <div class="input-wrap">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="e.g. john@example.com" required />
+                  </div>
+                  <span class="error-msg" id="email-error"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject <span class="required">*</span></label>
+                <div class="input-wrap">
+                  <i class="fa-regular fa-bookmark"></i>
+                  <input type="text" id="subject" name="subject" placeholder="e.g. Project Collaboration / Hello" required />
+                </div>
+                <span class="error-msg" id="subject-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message <span class="required">*</span></label>
+                <div class="input-wrap textarea-wrap">
+                  <i class="fa-regular fa-comment-dots"></i>
+                  <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
+                <span class="error-msg" id="message-error"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-full submit-btn" id="submit-btn">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+
+              <div class="form-status" id="form-status" role="alert"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="#hero" class="footer-logo">&lt;Anupama Singh/&gt;</a>
+        <p class="footer-copy">
+          Designed & Built with curiosity, clean code, and passion. © <span id="current-year"></span> Anupama Singh. All rights reserved.
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-badges">
+          <span class="badge-mini"><i class="fa-solid fa-code"></i> Python</span>
+          <span class="badge-mini"><i class="fa-solid fa-brain"></i> CS & AI</span>
+          <span class="badge-mini"><i class="fa-solid fa-feather-pointed"></i> Badminton</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
+
